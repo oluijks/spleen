@@ -1,8 +1,14 @@
+<script lang="ts">
+  import { pageTitle } from '$lib/stores/app';
+
+  $pageTitle = 'home';
+</script>
+
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
 <div class="container mx-auto flex h-full items-center justify-center">
   <div class="flex flex-col items-center space-y-10 text-center">
-    <h2 class="h2">Welcome to Skeleton.</h2>
+    <h2 class="h2">welcome to spleen</h2>
     <!-- Animated Logo -->
     <figure>
       <section class="img-bg" />

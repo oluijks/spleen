@@ -1,5 +1,7 @@
 <script lang="ts">
   import '../app.postcss';
+  import { metaTitle } from '$lib/stores/app';
+
   import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 
   // Highlight JS
@@ -30,13 +32,17 @@
   storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
+<svelte:head>
+  <title>{$metaTitle}</title>
+</svelte:head>
+
 <!-- App Shell -->
 <AppShell>
   <svelte:fragment slot="header">
     <!-- App Bar -->
     <AppBar>
       <svelte:fragment slot="lead">
-        <strong class="text-xl uppercase">Skeleton</strong>
+        <span class="h3 tracking-wider">spleen</span>
       </svelte:fragment>
       <svelte:fragment slot="trail">
         <a
