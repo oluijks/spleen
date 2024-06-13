@@ -15,6 +15,12 @@ importers:
         specifier: 11.9.0
         version: 11.9.0
     devDependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.0.18
+        version: 5.0.18
+      '@fontsource-variable/urbanist':
+        specifier: ^5.0.21
+        version: 5.0.21
       '@playwright/test':
         specifier: ^1.28.1
         version: 1.44.1
@@ -294,6 +300,12 @@ packages:
 
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
+
+  '@fontsource-variable/inter@5.0.18':
+    resolution: {integrity: sha512-rJzSrtJ3b7djiGFvRuTe6stDfbYJGhdQSfn2SI2WfXviee7Er0yKAHE5u7FU7OWVQQQ1x3+cxdmx9NdiAkcrcA==}
+
+  '@fontsource-variable/urbanist@5.0.21':
+    resolution: {integrity: sha512-OovhNBmyqatjOOCBa4gsZ8usS+VAMtHdJAzhGMVvo+42Ryjh3DJjbnXrgfp7TF5N6SBPMwmw7ALY3ZdCSvWoDw==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -2041,6 +2053,10 @@ snapshots:
       '@floating-ui/utils': 0.2.2
 
   '@floating-ui/utils@0.2.2': {}
+
+  '@fontsource-variable/inter@5.0.18': {}
+
+  '@fontsource-variable/urbanist@5.0.21': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
