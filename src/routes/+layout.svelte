@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   import '../app.postcss';
   import { metaTitle } from '$lib/stores/app';
 
@@ -30,6 +32,28 @@
   } from '@floating-ui/dom';
   import { storePopup } from '@skeletonlabs/skeleton';
   storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+  const detectSWUpdate = async () => {
+    const registration = await navigator.serviceWorker.ready;
+    registration.addEventListener('updatefound', () => {
+      const newSW = registration.installing;
+      newSW?.addEventListener('statechange', () => {
+        if (newSW.state === 'installed') {
+          const update = confirm('New version available. Reload to update?');
+          if (update) {
+            newSW.postMessage({ type: 'SKIP_WAITING' });
+            window.location.reload();
+          }
+        }
+      });
+    });
+  };
+
+  onMount(() => {
+    if ('serviceWorker' in navigator) {
+      detectSWUpdate();
+    }
+  });
 </script>
 
 <svelte:head>
