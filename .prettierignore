@@ -4,4 +4,4 @@ package-lock.json
 yarn.lock
 
 /pb
-/test-results
+/e2e/test-results
