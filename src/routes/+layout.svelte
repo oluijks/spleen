@@ -6,6 +6,8 @@
   import { dateTime, metaTitle, sitePreferences } from '$lib/stores/app';
 
   import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+  import { initializeStores, Toast } from '@skeletonlabs/skeleton';
+  initializeStores();
 
   // Highlight JS
   import hljs from 'highlight.js/lib/core';
@@ -15,7 +17,6 @@
   import css from 'highlight.js/lib/languages/css';
   import javascript from 'highlight.js/lib/languages/javascript';
   import typescript from 'highlight.js/lib/languages/typescript';
-
   hljs.registerLanguage('xml', xml); // for HTML
   hljs.registerLanguage('css', css);
   hljs.registerLanguage('javascript', javascript);
@@ -62,42 +63,34 @@
   <meta name="description" content={appDescription} />
 </svelte:head>
 
-<!-- App Shell -->
+<Toast position="br" />
+
 <AppShell>
   <svelte:fragment slot="header">
-    <!-- App Bar -->
     <AppBar>
       <svelte:fragment slot="lead">
-        <span class="h3 tracking-wider">spleen</span>
+        <a href="/">
+          <span class="h3 tracking-wider">{appName}</span>
+        </a>
       </svelte:fragment>
       <svelte:fragment slot="trail">
         <a
           class="variant-ghost-surface btn btn-sm"
-          href="https://discord.gg/EXqV7W8MtY"
+          href="https://github.com/oluijks/spleen"
           target="_blank"
           rel="noreferrer"
         >
-          Discord
-        </a>
-        <a
-          class="variant-ghost-surface btn btn-sm"
-          href="https://twitter.com/SkeletonUI"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Twitter
-        </a>
-        <a
-          class="variant-ghost-surface btn btn-sm"
-          href="https://github.com/skeletonlabs/skeleton"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
+          github
         </a>
       </svelte:fragment>
     </AppBar>
   </svelte:fragment>
-  <!-- Page Route Content -->
   <slot />
+  <svelte:fragment slot="footer">
+    {#if $sitePreferences.showClock}
+      <span class="text-sm tabular-nums">
+        {$dateTime.toLocaleString()}
+      </span>
+    {/if}
+  </svelte:fragment>
 </AppShell>

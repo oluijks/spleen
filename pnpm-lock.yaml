@@ -21,6 +21,9 @@ importers:
       '@fontsource-variable/urbanist':
         specifier: ^5.0.21
         version: 5.0.21
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.0.13
+        version: 5.0.13
       '@neoconfetti/svelte':
         specifier: ^2.2.1
         version: 2.2.1
@@ -102,6 +105,9 @@ importers:
       svelte-check:
         specifier: ^3.6.0
         version: 3.8.0(postcss-load-config@4.0.2(postcss@8.4.38))(postcss@8.4.38)(svelte@4.2.18)
+      svelte-persisted-store:
+        specifier: ^0.11.0
+        version: 0.11.0(svelte@4.2.18)
       tailwindcss:
         specifier: 3.4.4
         version: 3.4.4
@@ -318,6 +324,9 @@ packages:
 
   '@fontsource-variable/urbanist@5.0.21':
     resolution: {integrity: sha512-OovhNBmyqatjOOCBa4gsZ8usS+VAMtHdJAzhGMVvo+42Ryjh3DJjbnXrgfp7TF5N6SBPMwmw7ALY3ZdCSvWoDw==}
+
+  '@fontsource/ibm-plex-mono@5.0.13':
+    resolution: {integrity: sha512-gtlMmvk//2AgDEZDFsoL5z9mgW3ZZg/9SC7pIfDwNKp5DtZpApgqd1Fua3HhPwYRIHrT76IQ1tMTzQKLEGtJGQ==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1858,6 +1867,12 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
+  svelte-persisted-store@0.11.0:
+    resolution: {integrity: sha512-9RgJ5DrawGyyfK22A80cfu8Jose3CV8YjEZKz9Tn94rQ0tWyEmYr+XI+wrVF6wjRbW99JMDSVcFRiM3XzVJj/w==}
+    engines: {node: '>=0.14'}
+    peerDependencies:
+      svelte: ^3.48.0 || ^4.0.0 || ^5.0.0-next.0
+
   svelte-preprocess@5.1.4:
     resolution: {integrity: sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==}
     engines: {node: '>= 16.0.0'}
@@ -2239,6 +2254,8 @@ snapshots:
   '@fontsource-variable/inter@5.0.18': {}
 
   '@fontsource-variable/urbanist@5.0.21': {}
+
+  '@fontsource/ibm-plex-mono@5.0.13': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
@@ -3718,6 +3735,10 @@ snapshots:
       svelte: 4.2.18
 
   svelte-parse-markup@0.1.5(svelte@4.2.18):
+    dependencies:
+      svelte: 4.2.18
+
+  svelte-persisted-store@0.11.0(svelte@4.2.18):
     dependencies:
       svelte: 4.2.18
 
