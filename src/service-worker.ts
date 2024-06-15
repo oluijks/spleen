@@ -20,6 +20,7 @@ sw.addEventListener('install', (event) => {
   async function addFilesToCache() {
     const cache = await caches.open(CACHE);
     await cache.addAll(ASSETS);
+    await sw.skipWaiting();
   }
 
   event.waitUntil(addFilesToCache());
@@ -39,6 +40,11 @@ sw.addEventListener('activate', (event) => {
 sw.addEventListener('fetch', (event) => {
   // ignore POST requests etc
   if (event.request.method !== 'GET') return;
+
+  // const matchUrl = new URL(event.request.url);
+  // if (matchUrl.pathname.startsWith('/api')) return;
+  // if (matchUrl.pathname.startsWith('/admin')) return;
+  // if (matchUrl.pathname.startsWith('/dashboard')) return;
 
   async function respond() {
     const url = new URL(event.request.url);
