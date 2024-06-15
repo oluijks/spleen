@@ -2,7 +2,8 @@
   import { onMount } from 'svelte';
 
   import '../app.postcss';
-  import { metaTitle } from '$lib/stores/app';
+  import { appDescription, appName } from '$lib/config';
+  import { dateTime, metaTitle, sitePreferences } from '$lib/stores/app';
 
   import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 
@@ -58,6 +59,7 @@
 
 <svelte:head>
   <title>{$metaTitle}</title>
+  <meta name="description" content={appDescription} />
 </svelte:head>
 
 <!-- App Shell -->
