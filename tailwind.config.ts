@@ -1,8 +1,9 @@
-import { join } from 'path';
-import type { Config } from 'tailwindcss';
+import { skeleton } from '@skeletonlabs/tw-plugin';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
-import { skeleton } from '@skeletonlabs/tw-plugin';
+import { join } from 'path';
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import { spleen } from './src/spleen';
 
 export default {
@@ -15,27 +16,17 @@ export default {
     ),
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
+      },
+    },
   },
   plugins: [
     forms,
     typography,
     skeleton({
       themes: {
-        preset: [
-          {
-            name: 'wintry',
-            enhancements: true,
-          },
-          {
-            name: 'hamlindigo',
-            enhancements: true,
-          },
-          {
-            name: 'vintage',
-            enhancements: true,
-          },
-        ],
         custom: [spleen],
       },
     }),
